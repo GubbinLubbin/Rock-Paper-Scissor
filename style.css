@@ -1,81 +1,145 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
     font-size: 10px;
     background-color: gray;
-
+    box-sizing: border-box;
 }
-h1{
+
+h1 {
     font-size: 4rem;
-    height:6rem;
+    height: 6rem;
     background-color: #07568f;
     text-align: center;
-    color:white;
+    color: white;
+    line-height: 6rem;
 }
-.score{
+
+.score {
     font-size: 5rem;
 }
-.identifier{
-    font-size:3rem;
+
+.identifier {
+    font-size: 3rem;
 }
-.image{
+
+.image {
     border-radius: 50%;
-    width:35rem;
-    height:30rem;
+    width: 20rem;
+    height: 18rem;
+    object-fit: cover;
 }
+
+/* Buttons */
+.button {
+    border-radius: 50%;
+    border: none;
+    transition: transform 0.2s ease-in-out;  /* smooth effect */
+}
+
 .button:hover {
     cursor: pointer;
+    transform: scale(1.1); /* makes button pop */
+}
 
-}
-.button{
-    border-radius: 50%;
-    border:none;
-}
-#info{
-    padding:8px 8px;
+#info {
+    padding: 8px 8px;
     border-radius: 5px;
-    font-size:2rem ;
+    font-size: 2rem;
     background-color: red;
-    color:white;
+    color: white;
+    text-align: center;
 }
-#flex-container{
-    margin-top: 8rem;
+
+#flex-container {
+    margin-top: 5rem;
     display: flex;
-    gap:4rem;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1rem;
 }
-#score{
+
+#score {
     font-size: large;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
 }
-#reset_button{
-    font-size: 2.5rem;
-    padding:5px 5px;
+
+#reset_button {
+    font-size: 2rem;
+    padding: 8px 15px;
     background-color: yellow;
     border-radius: 10px;
+    border: none;
+    transition: transform 0.2s ease-in-out;
 }
-.image-container{
-    margin-top: 8rem;
+
+#reset_button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.image-container {
+    margin-top: 3rem;
     display: flex;
-    gap:4rem;
+    gap: 2rem;
     justify-content: center;
-    flex-direction: row;
-    align-items: start;
-
+    flex-wrap: wrap; /* lets buttons wrap on small screens */
 }
-#grid-container{
-    display:grid;
+
+#grid-container {
+    display: grid;
     place-items: center;
-    height:12rem;
-    width:25rem;
-    grid-template-columns:1fr 1fr;
+    height: auto;
+    width: 100%;
+    max-width: 30rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
 }
 
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .image {
+        width: 15rem;
+        height: 13rem;
+    }
 
+    h1 {
+        font-size: 3rem;
+    }
 
+    .score {
+        font-size: 3.5rem;
+    }
 
+    .identifier {
+        font-size: 2rem;
+    }
 
+    #reset_button {
+        font-size: 1.5rem;
+        padding: 6px 12px;
+    }
+}
 
+@media (max-width: 480px) {
+    .image {
+        width: 10rem;
+        height: 9rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .score {
+        font-size: 2.5rem;
+    }
+
+    .identifier {
+        font-size: 1.5rem;
+    }
+}
